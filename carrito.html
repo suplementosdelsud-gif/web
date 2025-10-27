@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Carrito - Suplementos del Sud</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="carrito.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>🛍️ Mi Carrito</h1>
+  </header>
+
+  <main>
+    <div id="carrito-contenido">
+      <p>Tu carrito está vacío 🛒</p>
+    </div>
+
+    <div class="acciones">
+      <button class="btn-principal" onclick="vaciarCarrito()">Vaciar carrito</button>
+      <button class="btn-volver" onclick="window.open('tienda.html', '_self')">Volver a la tienda</button>
+      <button class="btn-volver" onclick="window.close()">Cerrar pestaña</button>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tienda - Suplementos del Sud</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>🛒 Suplementos del Sud</h1>
+    <div class="header-actions">
+      <button onclick="window.open('objetivos.html','_blank')" class="btn-principal">Según tu objetivo</button>
+    <header>
+ 
+  <div class="header-actions">
+    
+    <button onclick="window.open('carrito.html','_blank')" class="btn-principal">🛍️ Ver mi carrito</button>
+  </div>
+</header>
+    </div>
+  </header>
+
+  <main class="tienda">
+    <!-- CATEGORÍA: PROTEÍNAS -->
+    <section>
+      <h2>Proteínas</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="img/descarga.jpeg" alt="ANABOLIC HARDCORE BIG BOSS NUTRITION">
+          <h3>ANABOLIC HARDCORE BIG BOSS NUTRITION</h3>
+          <p>Potencia, fuerza, crecimiento, músculo, testosterona, energía, rendimiento, definición, intensidad, resultados.</p>
+          <p class="precio">Precio: <span>230 Bs</span></p>
+          <input type="number" id="cant1" min="1" value="1">
+          <button onclick="añadirCarrito('ANABOLIC HARDCORE BIG BOSS NUTRITION','cant1',230)">Añadir al carrito</button>
+          <button onclick="verDetalles('ANABOLIC HARDCORE BIG BOSS NUTRITION',230)">Ver detalles</button>
+        </div>
+
+        <div class="producto">
+          <img src="img/descarga (1).jpeg" alt="WHEY PHROM DRAGON 5lb">
+          <h3>WHEY PHROM DRAGON 5lb </h3>
+          <p>Proteína premium, musculación, recuperación, fuerza, sabor, pureza, rendimiento, crecimiento, energía, calidad.</p>
+          <p class="precio">Precio: <span>850 Bs</span></p>
+          <input type="number" id="cant2" min="1" value="1">
+          <button onclick="añadirCarrito('WHEY PHROM DRAGON 5lb','cant2',850)">Añadir al carrito</button>
+          <button onclick="verDetalles('WHEY PHROM DRAGON 5lb',850)">Ver detalles</button>
+        </div>
+
+        <div class="producto">
+          <img src="img/descarga (2).jpeg" alt="PROSTAR WHEY ULTIMATE NUTRITION">
+          <h3> PROSTAR WHEY ULTIMATE NUTRITION </h3>
+          <p>Proteína pura, recuperación, músculo, fuerza, rendimiento, calidad, sabor, energía, crecimiento, resultados.</p>
+          <p class="precio">Precio: <span>850 Bs</span></p>
+          <input type="number" id="cant3" min="1" value="1">
+          <button onclick="añadirCarrito('PROSTAR WHEY ULTIMATE NUTRITION','cant3',850)">Añadir al carrito</button>
+          <button onclick="verDetalles('PROSTAR WHEY ULTIMATE NUTRITION',850)">Ver detalles</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORÍA: CREATINAS -->
+    <section>
+      <h2>Creatinas</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="img/descarga (3).jpeg" alt="Creatina Dragon Pharma Monohidratada">
+          <h3>Creatina Dragon Pharma Monohidratada</h3>
+          <p>Potencia, fuerza, energía, rendimiento, recuperación, pureza, músculo, resistencia, calidad, resultados.</p>
+          <p class="precio">Precio: <span>360 Bs</span></p>
+          <input type="number" id="cant4" min="1" value="1">
+          <button onclick="añadirCarrito('Creatina Dragon Pharma Monohidratada','cant4',360)">Añadir al carrito</button>
+          <button onclick="verDetalles('Creatina Dragon Pharma Monohidratada',360)">Ver detalles</button>
+        </div>
+
+        <div class="producto">
+          <img src="img/descarga (4).jpeg" alt="Prossups AMERICANA">
+          <h3> Prossups AMERICANA</h3>
+          <p>Aumenta fuerza, potencia, energía, rendimiento, recuperación muscular, resistencia, volumen, pureza, absorción, crecimiento, calidad, resultados, efectividad.</p>
+          <p class="precio">Precio: <span>300 Bs</span></p>
+          <input type="number" id="cant5" min="1" value="1">
+          <button onclick="añadirCarrito('Prossups AMERICANA','cant5',300)">Añadir al carrito</button>
+          <button onclick="verDetalles('Prossups AMERICANA',300)">Ver detalles</button>
+        </div>
+        <div class="producto">
+          <img src="img/descarga (5).jpeg" alt="CREATINA CELLUCOR ">
+          <h3>CREATINA CELLUCOR </h3>
+          <p>Potencia, fuerza, energía, rendimiento, recuperación, resistencia, crecimiento muscular, pureza, absorción, calidad, resultados, intensidad, efectividad.</p>
+          <p class="precio">Precio: <span>360 Bs</span></p>
+          <input type="number" id="cant4" min="1" value="1">
+          <button onclick="añadirCarrito('CREATINA CELLUCOR','cant4',360)">Añadir al carrito</button>
+          <button onclick="verDetalles('CREATINA CELLUCOR',360)">Ver detalles</button>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- CATEGORÍA: VITAMINAS -->
+    <section>
+      <h2>Vitaminas</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="img/descarga (6).jpeg" alt="OMEGA 3 de 130 cápsulas">
+          <h3>OMEGA 3 de 130 cápsulas</h3>
+          <p>Salud cardiovascular, articulaciones, cerebro, energía, recuperación, concentración, rendimiento, bienestar, antioxidante, calidad, pureza, equilibrio, vitalidad.</p>
+          <p class="precio">Precio: <span>180 Bs</span></p>
+          <input type="number" id="cant6" min="1" value="1">
+          <button onclick="añadirCarrito('OMEGA 3 de 130 cápsulas','cant6',180)">Añadir al carrito</button>
+          <button onclick="verDetalles('OMEGA 3 de 130 cápsulas',180)">Ver detalles</button>
+        </div>
+
+        <div class="producto">
+          <img src="img/descarga (7).jpeg" alt="VITAMINA C">
+          <h3>VITAMINA C</h3>
+          <p>Inmunidad, antioxidante, energía, recuperación, piel, defensas, salud, células, colágeno, protección, vitalidad, bienestar, pureza.</p>
+          <p class="precio">Precio: <span>160 Bs</span></p>
+          <input type="number" id="cant7" min="1" value="1">
+          <button onclick="añadirCarrito('VITAMINA C','cant7',160)">Añadir al carrito</button>
+          <button onclick="verDetalles('VITAMINA C',160)">Ver detalles</button>
+        </div>
+
+        <div class="producto">
+          <img src="img/descarga (8).jpeg" alt="COLAGENO + ÁCIDO HIALUROICO">
+          <h3>COLAGENO + ÁCIDO HIALUROICO</h3>
+          <p>Salud cardiovascular, articulaciones, cerebro, energía, recuperación, concentración, rendimiento, bienestar, antioxidante, calidad, pureza, equilibrio, vitalidad. </p>
+          <p class="precio">Precio: <span>200 Bs</span></p>
+          <input type="number" id="cant8" min="1" value="1">
+          <button onclick="añadirCarrito('COLAGENO + ÁCIDO HIALUROICO','cant8',200)">Añadir al carrito</button>
+          <button onclick="verDetalles('COLAGENO + ÁCIDO HIALUROICO',200)">Ver detalles</button>
+        </div>
+      </div>
+    </section>
+    <!-- CATEGORÍA: QUEMADORES DE GRASA -->
+    <section>
+      <h2> Quemadores de grasa</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="img/descarga (9).jpeg" alt="Quemadores de grasa">
+          <h3>Muscletech Hydroxycut Hardcore Elite</h3>
+          <p>Fórmula termoactiva, alta cafeína, potencia energía y quema de grasa intensa. </p>
+          <p class="precio">Precio: <span>490 Bs</span></p>
+          <input type="number" id="cant6" min="1" value="1">
+          <button onclick="añadirCarrito('Muscletech Hydroxycut Hardcore Elita','cant6',490)">Añadir al carrito</button>
+          <button onclick="verDetalles('Muscletech Hydroxycut Hardcore Elit',490)">Ver detalles</button>
+        </div>
+
+        <div class="producto">
+          <img src="img/descarga (10).jpeg" alt="Leanbean Leanbean ">
+          <h3>Leanbean Leanbean</h3>
+          <p>Quemador diseñado para mujeres, ingredientes naturales, ayuda en apetito reducción de grasa.</p>
+          <p class="precio">Precio: <span>400 Bs</span></p>
+          <input type="number" id="cant7" min="1" value="1">
+          <button onclick="añadirCarrito('Leanbean Leanbean ','cant7',400)">Añadir al carrito</button>
+          <button onclick="verDetalles('Leanbean Leanbean ',400)">Ver detalles</button>
+        </div>
+
+        <div class="producto">
+          <img src="img/descarga (11).jpeg" alt="JetFuel Thermo">
+          <h3>JetFuel Thermo</h3>
+          <p>Suplemento de alto rendimiento, enfoque intenso para fat burn y metabolismo acelerado.</p>
+          <p class="precio">Precio: <span>520 Bs</span></p>
+          <input type="number" id="cant8" min="1" value="1">
+          <button onclick="añadirCarrito('JetFuel Thermo','cant8',520)">Añadir al carrito</button>
+          <button onclick="verDetalles('JetFuel Thermo',520)">Ver detalles</button>
+        </div>
+        
+      </div>
+    </section>
+
+    <div class="acciones">
+      <button id="btnRealizarPedido" class="btn-principal" type="button">Realizar Pedido</button>
+     <button class="btn-volver" type="button" onclick="volverAInicio()">Volver Atrás</button>
+    </div>
+  </main>
+</body>
+</html>

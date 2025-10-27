@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalles del Producto - Suplementos del Sud</title>
+  <link rel="stylesheet" href="style.css">
+
+<style>
+  body { background: #f0f0f0; }
+  .descripcion {
+    background: #d0e0f5;
+    color: #000;
+    font-size: 16px;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+</style>
+
+
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      min-height: 80vh;
+      padding: 2rem;
+    }
+
+    .detalles-cuadro {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .detalles-cuadro:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    #tituloProducto {
+      color: #0033aa;
+      margin-bottom: 1rem;
+    }
+
+    #precioProducto {
+      color: #b50000;
+      font-weight: bold;
+    }
+
+    .descripcion {
+      width: 100%;
+      background: #e9eef5; /* Gris azulado claro */
+      color: #222; /* Texto oscuro */
+      border-radius: 8px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      text-align: justify;
+      margin-top: 10px;
+      min-height: 100px;
+      line-height: 1.5;
+    }
+
+    input[type="number"] {
+      width: 80px;
+      padding: 6px;
+      text-align: center;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      background: #0033aa;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 5px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #b50000;
+    }
+
+    select {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+
+    .acciones {
+      text-align: center;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Detalles del Producto</h1>
+  </header>
+
+  <main>
+    <div class="detalles-cuadro">
+      <h2 id="tituloProducto">Selecciona un producto</h2>
+      <p><strong>Precio:</strong> <span id="precioProducto">0</span> Bs</p>
+
+      <label for="productoSeleccionado"><strong>Selecciona un producto:</strong></label>
+      <select id="productoSeleccionado">
+        <optgroup label="🏋️ Proteínas">
+          <option value="ANAB0LIC HARDCORE BIG BOSS NUTRITION">ANAB0LIC HARDCORE BIG BOSS NUTRITION</option>
+          <option value="WHEY PHROM DRAGON 5lb">WHEY PHROM DRAGON 5lb</option>
+          <option value="PROSTAR WHEY ULTIMATE NUTRITION">PROSTAR WHEY ULTIMATE NUTRITION</option>
+        </optgroup>
+
+        <optgroup label="⚡ Creatinas">
+          <option value="Creatina Dragon Pharma Monohidratada">Creatina Dragon Pharma Monohidratada</option>
+          <option value="Prossups AMERICANA">Prossups AMERICANA</option>
+          <option value="CREATINA CELLUCOR">CREATINA CELLUCOR</option>
+        </optgroup>
+
+        <optgroup label="💊 Vitaminas">
+          <option value="OMEGA 3 de 130 cápsulas">OMEGA 3 de 130 cápsulas</option>
+          <option value="VITAMINA C">VITAMINA C</option>
+          <option value="COLAGENO + ÁCIDO HIALUROICO">COLAGENO + ÁCIDO HIALUROICO</option>
+        </optgroup>
+
+        <optgroup label="🔥 Quemadores de Grasa">
+          <option value="Muscletech Hydroxycut Hardcore Elite">Muscletech Hydroxycut Hardcore Elite</option>
+          <option value="Leanbean Leanbean">Leanbean Leanbean</option>
+          <option value="JetFuel Thermo">JetFuel Thermo</option>
+        </optgroup>
+      </select>
+
+      <label><strong>Descripción del producto:</strong></label>
+      <div id="descripcion" class="descripcion">
+        Selecciona un producto para ver su descripción.
+      </div>
+
+      <label for="cantidadDetalle"><strong>Cantidad:</strong></label>
+      <input type="number" id="cantidadDetalle" min="1" value="1">
+
+      <div class="acciones">
+        <button id="btnAñadirDetalle">Añadir al carrito</button>
+        <button id="btnRealizarPedido" class="btn-principal" type="button">Realizar Pedido</button>
+        <button onclick="window.open('tienda.html','_self')">Volver a la tienda</button>
+        <button onclick="window.open('index.html','_self')">Volver al inicio</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const select = document.getElementById("productoSeleccionado");
+  const descripcionEl = document.getElementById("descripcion");
+  const tituloEl = document.getElementById("tituloProducto");
+  const precioEl = document.getElementById("precioProducto");
+
+  // Mapas de precios y descripciones
+  const precios = {
+    "ANAB0LIC HARDCORE BIG BOSS NUTRITION": 230,
+    "WHEY PHROM DRAGON 5lb": 850,
+    "PROSTAR WHEY ULTIMATE NUTRITION": 850,
+    "Creatina Dragon Pharma Monohidratada": 360,
+    "Prossups AMERICANA": 300,
+    "CREATINA CELLUCOR": 360,
+    "OMEGA 3 de 130 cápsulas": 180,
+    "VITAMINA C": 160,
+    "COLAGENO + ÁCIDO HIALUROICO": 200,
+    "Muscletech Hydroxycut Hardcore Elite": 490,
+    "Leanbean Leanbean": 400,
+    "JetFuel Thermo": 520
+  };
+
+  const descripciones = {
+    "ANAB0LIC HARDCORE BIG BOSS NUTRITION": "ANAB0LIC HARDCORE BIG BOSS NUTRITION es un suplemento de fórmula avanzada diseñado para potenciar el crecimiento muscular y mejorar la fuerza. Su combinación de ingredientes busca estimular la síntesis de proteínas y optimizar el rendimiento físico. Se recomienda consumir 1 cápsula después del entrenamiento o según las indicaciones del fabricante. Es importante mantener una dieta equilibrada y acompañar su uso con una rutina de ejercicios adecuada.",
+    "WHEY PHROM DRAGON 5lb": "WHEY PHROM DRAGON 5lb es una proteína de suero de alta pureza, ideal para promover el crecimiento y la recuperación muscular. Aporta aminoácidos esenciales y BCAA que ayudan a reparar el tejido muscular post-entrenamiento. Se recomienda tomar un scoop (30g) con agua o leche después del entrenamiento o como suplemento proteico diario.",
+    "PROSTAR WHEY ULTIMATE NUTRITION": "PROSTAR WHEY ULTIMATE NUTRITION combina aislado y concentrado de proteína de suero de leche para una absorción eficiente. Favorece la regeneración muscular y el aumento de masa magra. Se recomienda consumir 1 scoop (30g) después del entrenamiento o entre comidas para alcanzar los requerimientos diarios de proteínas.",
+    "Creatina Dragon Pharma Monohidratada": "Creatina Dragon Pharma Monohidratada es una fuente pura de creatina que incrementa la fuerza, el rendimiento y la energía muscular. Aumenta las reservas de fosfocreatina, mejorando la potencia y la resistencia. Se recomienda tomar 5g diarios disueltos en agua o jugo, preferentemente después del entrenamiento.",
+    "Prossups AMERICANA": "La Creatina Prossups Americana proporciona creatina monohidratada micronizada para favorecer la fuerza, energía y masa muscular. Mejora el rendimiento en ejercicios de alta intensidad y reduce la fatiga. Se toma una porción de 5g diarios con abundante agua, idealmente post-entrenamiento.",
+    "CREATINA CELLUCOR": "CREATINA CELLUCOR es una creatina monohidratada micronizada de alta pureza que mejora el rendimiento, la fuerza y la recuperación. Su formulación facilita la absorción muscular. Se recomienda consumir 3-5g diarios, disueltos en agua o tu batido post-entrenamiento.",
+    "OMEGA 3 de 130 cápsulas": "El suplemento OMEGA 3 de 130 cápsulas contiene ácidos grasos esenciales EPA y DHA que contribuyen a la salud del corazón, articulaciones y cerebro. Se recomienda consumir de 1 a 3 cápsulas diarias junto con las comidas.",
+    "VITAMINA C": "La VITAMINA C ayuda al fortalecimiento del sistema inmunológico, la producción de colágeno y la protección celular contra el daño oxidativo. Se recomienda tomar 1 cápsula diaria (500-1000mg) preferiblemente con alimentos.",
+    "COLAGENO + ÁCIDO HIALUROICO": "El suplemento COLÁGENO + ÁCIDO HIALURÓNICO favorece la elasticidad de la piel, la salud articular y la hidratación corporal. Se recomienda consumir 10g diarios disueltos en agua o jugo, preferiblemente en ayunas.",
+    "Muscletech Hydroxycut Hardcore Elite": "Muscletech Hydroxycut Hardcore Elite es un potente termogénico diseñado para acelerar el metabolismo y mejorar el enfoque durante el entrenamiento. Contiene cafeína y extractos naturales que ayudan a la pérdida de grasa. Se recomienda tomar 1 cápsula por la mañana y otra antes del entrenamiento. Evitar su consumo en la noche.",
+    "Leanbean Leanbean": "Leanbean Leanbean es un quemador de grasa formulado especialmente para mujeres. Contiene glucomanano, extracto de café verde y cromo, que ayudan a controlar el apetito y aumentar la energía. Se recomienda tomar 2 cápsulas antes de cada comida principal con abundante agua.",
+    "JetFuel Thermo": "JetFuel Thermo es un termogénico avanzado con cafeína, té verde y L-carnitina que acelera el metabolismo, aumenta la energía y favorece la quema de grasa. Se recomienda consumir 1 cápsula dos veces al día, preferentemente por la mañana y antes del entrenamiento."
+  };
+
+  // Intenta leer producto guardado usando varias claves
+  const posiblesClaves = ["productoSeleccionado", "productoDetalle", "productoSeleccionadoGuardar", "producto"];
+  let productoGuardado = null;
+
+  for (const clave of posiblesClaves) {
+    try {
+      const raw = localStorage.getItem(clave);
+      if (!raw) continue;
+      const parsed = JSON.parse(raw);
+      // parsed puede ser string o objeto { nombre, precio }
+      if (typeof parsed === "string") {
+        productoGuardado = { nombre: parsed, precio: precios[parsed] || 0 };
+      } else if (parsed && (parsed.nombre || parsed.name)) {
+        productoGuardado = { nombre: parsed.nombre || parsed.name, precio: parsed.precio || parsed.price || precios[parsed.nombre || parsed.name] || 0 };
+      }
+      if (productoGuardado) {
+        console.log("producto guardado encontrado en localStorage key:", clave, productoGuardado);
+        break;
+      }
+    } catch (e) {
+      console.warn("Error parseando localStorage clave", clave, e);
+    }
+  }
+
+  // función para asegurar que existe esa option en el select (si no, la añade)
+  function ensureOptionExists(nombre) {
+    if (!nombre) return;
+    const exists = Array.from(select.options).some(opt => opt.value === nombre);
+    if (!exists) {
+      const opt = document.createElement("option");
+      opt.value = nombre;
+      opt.textContent = nombre;
+      // añadir al final del select
+      select.appendChild(opt);
+      console.log("Option añadida dinámicamente al select:", nombre);
+    }
+  }
+
+  // función que actualiza la vista según nombre
+  function actualizarVistaPorNombre(nombre) {
+    if (!nombre) {
+      tituloEl.textContent = "Selecciona un producto";
+      precioEl.textContent = "0";
+      descripcionEl.innerHTML = "Selecciona un producto para ver su descripción.";
+      return;
+    }
+    tituloEl.textContent = nombre;
+    precioEl.textContent = precios[nombre] !== undefined ? precios[nombre] : (productoGuardado && productoGuardado.precio) || 0;
+    descripcionEl.innerHTML = descripciones[nombre] || "Sin descripción disponible.";
+  }
+
+  // Si hay producto guardado, seleccionarlo y actualizar vista
+  if (productoGuardado && productoGuardado.nombre) {
+    ensureOptionExists(productoGuardado.nombre);
+    select.value = productoGuardado.nombre;
+    actualizarVistaPorNombre(productoGuardado.nombre);
+  } else {
+    // no hay producto guardado: deja valores por defecto
+    actualizarVistaPorNombre(null);
+  }
+
+  // evento change del select
+  select.addEventListener("change", (e) => {
+    const nombre = e.target.value;
+    actualizarVistaPorNombre(nombre);
+  });
+
+  // Conectar botones (sin cambiar comportamiento existente)
+  const btnAñadir = document.getElementById("btnAñadirDetalle");
+  if (btnAñadir) {
+    btnAñadir.addEventListener("click", () => {
+      const nombre = select.value;
+      const precio = parseFloat(precioEl.textContent) || 0;
+      const cantidad = parseInt(document.getElementById("cantidadDetalle").value) || 1;
+      if (!nombre || precio <= 0 || cantidad < 1) {
+        alert("⚠️ Selecciona un producto válido y una cantidad.");
+        return;
+      }
+      // añadirCarrito viene de script.js — si da error revisa consola
+      try {
+        añadirCarrito(nombre, "cantidadDetalle", precio);
+      } catch (err) {
+        console.error("añadirCarrito no está definida. Revisa script.js", err);
+        alert("Error: la función añadirCarrito no está disponible. Verifica script.js");
+      }
+    });
+  }
+
+  const btnPedido = document.getElementById("btnRealizarPedido");
+  if (btnPedido) {
+    btnPedido.addEventListener("click", () => {
+      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      if (!carrito || carrito.length === 0) {
+        alert("⚠️ No hay productos en el carrito para realizar el pedido.");
+        return;
+      }
+      // Si usas realizarPedido() de script.js puedes llamarlo; si no, mantiene alerta
+      if (typeof realizarPedido === "function") {
+        realizarPedido();
+      } else {
+        alert("✅ Pedido realizado con éxito. Gracias por tu compra.");
+        localStorage.removeItem("carrito");
+      }
+    });
+  }
+
+  console.log("detalles.html inicializado correctamente.");
+});
+</script>
+
+</body>
+</html>

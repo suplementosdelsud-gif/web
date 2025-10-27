@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registro - Suplementos del Sud</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>🏋️ Suplementos del Sud</h1>
+    <p>Completa tus datos para ingresar a la tienda</p>
+  </header>
+
+  <main>
+    <label>Nombre</label>
+    <input id="nombre" type="text" required>
+
+    <label>Apellido</label>
+    <input id="apellido" type="text" required>
+
+    <label>Género</label>
+    <select id="genero">
+      <option value="">Selecciona</option>
+      <option>Masculino</option>
+      <option>Femenino</option>
+    </select>
+
+    <label>Correo</label>
+    <input id="correo" type="email" required>
+
+    <label>Dirección</label>
+    <input id="direccion" type="text">
+
+    <label>Ciudad</label>
+    <input id="ciudad" type="text">
+
+    <button id="btnIrTienda" class="btn-principal" type="button">Ingresar a la Tienda</button>
+  </main>
+
+  <!-- ✅ Script adicional -->
+  <script>
+    document.getElementById("btnIrTienda").addEventListener("click", () => {
+      // Validar campos obligatorios
+      const nombre = document.getElementById("nombre").value.trim();
+      const apellido = document.getElementById("apellido").value.trim();
+      const correo = document.getElementById("correo").value.trim();
+
+      if (!nombre || !apellido || !correo) {
+        alert("⚠️ Por favor completa los campos obligatorios (nombre, apellido y correo).");
+        return;
+      }
+
+      // Guardar datos del cliente en localStorage
+      const cliente = {
+        nombre,
+        apellido,
+        genero: document.getElementById("genero").value,
+        correo,
+        direccion: document.getElementById("direccion").value.trim(),
+        ciudad: document.getElementById("ciudad").value.trim()
+      };
+
+      localStorage.setItem("cliente", JSON.stringify(cliente));
+
+      // Redirigir a la tienda
+      window.location.href = "tienda.html";
+    });
+  </script>
+</body>
+</html>

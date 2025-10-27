@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Según tu objetivo</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilos específicos para la página de objetivos */
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      min-height: 80vh;
+    }
+
+    .objetivo {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .objetivo:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .objetivo h2 {
+      color: #0033aa;
+      margin-bottom: 1rem;
+    }
+
+    .objetivo p {
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .btn-volver {
+      background: #0033aa;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-volver:hover {
+      background: #b50000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Elige tu Objetivo</h1>
+  </header>
+
+  <main>
+    <div class="objetivo">
+      <h2>🏋️‍♂️ Ganar Masa Muscular</h2>
+      <p>Fortalece tu cuerpo con suplementos como <b>proteínas y creatinas</b> para aumentar tu masa muscular.</p>
+    </div>
+
+    <div class="objetivo">
+      <h2>🔥 Definición Muscular</h2>
+      <p>Reduce grasa corporal y mejora tu rendimiento con <b>quemadores</b>  y <b>vitaminas</b>.</p>
+    </div>
+
+    <div class="objetivo">
+      <h2>⚡ Energía y Resistencia</h2>
+      <p>Aumenta tu enfoque y energía con  <b>complejos vitamínicos</b>.</p>
+    </div>
+    <button class="btn-volver-tienda">Volver a la tienda</button>
+    <button class="btn-volver-inicio">Volver al inicio</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
